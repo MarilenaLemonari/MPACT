@@ -60,7 +60,7 @@ Overview Video
 <center>
 <div class="video_wrapper">
 	<iframe frameborder="0" width="100%" height="100%"
-	src="https://youtu.be/5BKo8Tv9Sps">
+	src="https://www.youtube.com/embed/5BKo8Tv9Sps?si=k_qBb6I0HT-0CG4c">
 	</iframe>
 </div>
 </center>
