@@ -73,13 +73,14 @@ Overview Video
 Citation
 </b></h3>
 <div style="background-color:rgba(0, 0, 0, 0.03); vertical-align: middle; padding:10px 20px;">
- @article{LemonariPanayiotou_2024, <br>
-title={P2C: A Paths-to-Crowds Framework to Parameterize Behaviors}, <br>
-url={http://dx.doi.org/10.36227/techrxiv.170654693.38725484/v1}, <br>
-DOI={10.36227/techrxiv.170654693.38725484/v1},  <br>
-publisher={Institute of Electrical and Electronics Engineers (IEEE)}, <br>
-author={Lemonari, Marilena and Panayiotou, Andreas and Pelechano, Nuria and Kyriakou, Theodoros and Chrysanthou, Yiorgos and Aristidou, Andreas and Charalambous, Panayiotis}, <br>
-year={2024}, <br>
-month=jan }
+@article{LemonariPanayiotou_2024, <br>
+	title={P2C: A Paths-to-Crowds Framework to Parameterize Behaviors}, <br>
+	url={http://dx.doi.org/10.36227/techrxiv.170654693.38725484/v1}, <br>
+	DOI={10.36227/techrxiv.170654693.38725484/v1},  <br>
+	publisher={Institute of Electrical and Electronics Engineers (IEEE)}, <br>
+	author={Lemonari, Marilena and Panayiotou, Andreas and Pelechano, Nuria and Kyriakou, Theodoros and Chrysanthou, Yiorgos and Aristidou, Andreas and Charalambous, Panayiotis}, <br>
+	year={2024}, <br>
+	month=jan<br>
+}
 
 </div>
