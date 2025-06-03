@@ -2,12 +2,12 @@
 # Site settings
 # -----------------------------------------------------------------------------
 
-title: P2C - A Paths-to-Crowds Framework to Parameterize Behaviors
+title: MPACT - Mesoscopic Profiling and Abstraction of Crowd Trajectories
 first_name: Marilena
 middle_name: 
 last_name: Lemonari
 email: marilena.lemonari13@gmail.com
-description: P2C - A Paths-to-Crowds Framework to Parameterize Behaviors
+description: MPACT - Mesoscopic Profiling and Abstraction of Crowd Trajectories
 footer_text:
 keywords: Neural networks, Interactive simulation, Crowd simulation, User control, Crowd authoring, Data-driven methods, Interactive tool # add your own keywords or leave empty
 
