@@ -52,7 +52,7 @@ Overview Video
 <center>
 <div class="video_wrapper">
 	<iframe frameborder="0" width="100%" height="100%"
-	src="https://youtu.be/jTUMp-6b7gg">
+	src="https://www.youtube.com/embed/jTUMp-6b7gg">
 	</iframe>
 </div>
 </center>
