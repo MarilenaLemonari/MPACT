@@ -1,6 +1,6 @@
 ---
 layout: defaultPaper
-title: P2C - A Paths-to-Crowds Framework to Parameterize Behaviors
+title: MPACT - Mesoscopic Profiling and Abstraction of Crowd Trajectories
 permalink: /
 ---
 
@@ -14,7 +14,7 @@ permalink: /
 <br>
 
 <div class="img_horizontal_container">
-	<a href="https://doi.org/10.36227/techrxiv.170654693.38725484/v1">
+	<a href="https://doi.org/10.1111/cgf.70156">
 	<div class="img-with-text">
 		<img src="assets/img/article_icon.svg" alt="paper" />
 		<p><b>Paper (Preprint)</b></p>
@@ -26,7 +26,7 @@ permalink: /
 		<p><b>Code</b></p>
 	</div>
 	</a> -->
-	<a href="https://youtu.be/5BKo8Tv9Sps">
+	<a href="https://youtu.be/jTUMp-6b7gg">
 	<div class="img-with-text">
 		<img src="assets/img/video_icon.svg" alt="video" />
 		<p><b>Video</b></p>
@@ -41,7 +41,7 @@ Abstract
 </b></center></h3>
 
 <div style="text-align: justify;">
-Simulating believable crowds heavily relies upon the perceived realism and diversity of the agents' behaviors, whilst generating novel crowd simulations highly depends on being able to easily manipulate intuitive behavior parameters. We present P2C (Paths-to-Crowds), a method that parameterizes reference crowd data and enables the simulation of similar behaviors in different environments. This approach enables explainable and fine-grained control of simulations since artists can modify at run-time a small set of intuitive parameters in local regions. We incorporate the integration of four fundamental behaviors: goal-seeking, grouping, interaction with areas of interest, and connectivity-into an existing Reinforcement Learning (RL)-based crowd simulation system, which facilitates the creation of customizable agent behaviors and interactions. To learn a parameter model, we synthesize numerous simulations by sampling the parameter space; we then use these data to learn a model that outputs the underlying parameters. To achieve this, we encode the simulation in a set of 2D maps that encode different measurements such as velocities, occupancy, interpersonal distances, path deviations, etc. The trained model can then be used to infer parameters in localized regions of given crowd data (both real and simulated). This approach enables replication of behavior, transfer to new environments, real-time local control, editing of parameters, and explainability of behaviors (with respect to the fundamental behaviors). We evaluate our model's predictive power on real data and compare it against existing baselines. This along with the accompanying user study reveals P2C's potential in terms of achieving behavior realism and diversity.</div>
+Simulating believable crowds for applications like movies or games is challenging due to the many components that comprise a realistic outcome. Users typically need to manually tune a large number of simulation parameters until they reach the desired results. We introduce MPACT, a framework that leverages image-based encoding to convert unlabelled crowd data into meaningful and controllable parameters for crowd generation. In essence, we train a parameter prediction network on a diverse set of synthetic data, which includes pairs of images and corresponding crowd profiles. The learned parameter space enables: (a) implicit crowd authoring and control, allowing users to define desired crowd scenarios using real-world trajectory data, and (b) crowd analysis, facilitating the identification of crowd behaviours in the input and the classification of unseen scenarios through operations within the latent space. We quantitatively and qualitatively evaluate our framework, comparing it against real-world data and selected baselines, while also conducting user studies with expert and novice users. Our experiments show that the generated crowds score high in terms of simulation believability, plausibility, and crowd behaviour faithfulness.</div>
 
 --------
 
@@ -65,14 +65,17 @@ Overview Video
 Citation
 </b></h3>
 <div style="background-color:rgba(0, 0, 0, 0.03); vertical-align: middle; padding:10px 20px;">
-@article{LemonariPanayiotou_2024, <br>
-	&emsp;&emsp;title={P2C: A Paths-to-Crowds Framework to Parameterize Behaviors}, <br>
-	&emsp;&emsp;url={http://dx.doi.org/10.36227/techrxiv.170654693.38725484/v1}, <br>
-	&emsp;&emsp;DOI={10.36227/techrxiv.170654693.38725484/v1},  <br>
-	&emsp;&emsp;publisher={Institute of Electrical and Electronics Engineers (IEEE)}, <br>
-	&emsp;&emsp;author={Lemonari, Marilena and Panayiotou, Andreas and Pelechano, Nuria and Kyriakou, Theodoros and Chrysanthou, Yiorgos and Aristidou, Andreas and Charalambous, Panayiotis}, <br>
-	&emsp;&emsp;year={2024}, <br>
-	&emsp;&emsp;month=jan<br>
+@article{https://doi.org/10.1111/cgf.70156, <br>
+&emsp;&emsp;author = {Lemonari, Marilena and Panayiotou, Andreas and Kyriakou, Theodoros and Pelechano, Nuria and Chrysanthou, Yiorgos and Aristidou, Andreas and Charalambous, Panayiotis}, <br>
+&emsp;&emsp;title = {MPACT: Mesoscopic Profiling and Abstraction of Crowd Trajectories}, <br>
+&emsp;&emsp;journal = {Computer Graphics Forum}, <br>
+&emsp;&emsp;volume = {n/a}, <br>
+&emsp;&emsp;number = {n/a}, <br>
+&emsp;&emsp;pages = {e70156}, <br>
+&emsp;&emsp;keywords = {animation; behavioural animation, animation; motion control, methods and applications}, <br>
+&emsp;&emsp;doi = {https://doi.org/10.1111/cgf.70156}, <br>
+&emsp;&emsp;url = {https://onlinelibrary.wiley.com/doi/abs/10.1111/cgf.70156}, <br>
+&emsp;&emsp;eprint = {https://onlinelibrary.wiley.com/doi/pdf/10.1111/cgf.70156} <br>
 }
 
 </div>
