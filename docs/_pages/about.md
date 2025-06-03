@@ -17,7 +17,7 @@ permalink: /
 	<a href="https://doi.org/10.1111/cgf.70156">
 	<div class="img-with-text">
 		<img src="assets/img/article_icon.svg" alt="paper" />
-		<p><b>Paper (Preprint)</b></p>
+		<p><b>Paper</b></p>
 	</div>
 	</a>
 	<!-- <a href="https://github.com/UPC-ViRVIG/SparsePoser">
@@ -52,7 +52,7 @@ Overview Video
 <center>
 <div class="video_wrapper">
 	<iframe frameborder="0" width="100%" height="100%"
-	src="https://www.youtube.com/embed/5BKo8Tv9Sps?si=k_qBb6I0HT-0CG4c">
+	src="https://youtu.be/jTUMp-6b7gg">
 	</iframe>
 </div>
 </center>
