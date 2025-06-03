@@ -4,9 +4,9 @@ title: MPACT - Mesoscopic Profiling and Abstraction of Crowd Trajectories
 permalink: /
 ---
 
-<center>
+<!--<center>
 <figure style="display:inline-block;margin:0;padding:0"><img src="assets/img/Demonstration.png" alt="teaser" width="100%" /><figcaption style="text-align:center"></figcaption></figure>
-</center>
+</center> -->
 <center>
 <figure style="display:inline-block;margin:0;padding:0"><img src="assets/img/Pipeline_v2.png" alt="teaser" width="100%" /><figcaption style="text-align:center"></figcaption></figure>
 </center>
