@@ -5,4 +5,4 @@
 <h2>Source Code Coming Soon!</h2>
 
 
-![Demo Image](https://github.com/MarilenaLemonari/P2C/blob/main/imgs/Teaser.png)
+![Demo Image](https://github.com/MarilenaLemonari/P2C/blob/main/Images/Teaser.png)
