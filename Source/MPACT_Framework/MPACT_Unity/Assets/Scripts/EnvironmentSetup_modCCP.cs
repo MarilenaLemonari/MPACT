@@ -8,10 +8,16 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using Random = UnityEngine.Random;
 
+enum DatasetSelector{
+    Zara,
+    Students,
+    Church
+}
+
 public class EnvironmentSetup_modCCP : Singleton<EnvironmentSetup_modCCP>
 {
     [Header("Run Data")]
-    [SerializeField] private string m_datasetName;
+    [SerializeField] private DatasetSelector m_datasetName;
     [Header("Saving")]
     public float startSeconds = 0;
     public float endSeconds = 0;
@@ -63,6 +69,21 @@ public class EnvironmentSetup_modCCP : Singleton<EnvironmentSetup_modCCP>
     // Behavior Scene
     private CustomSceneManager m_behaviorDemoManager;
 
+    private string GetDatasetName()
+    {
+        switch (m_datasetName)
+        {
+            case DatasetSelector.Zara:
+                return "Zara";
+            case DatasetSelector.Students:
+                return "Students";
+            case DatasetSelector.Church:
+                return "Church";
+            default:
+                return "";
+        }
+    }
+    
     public void ContinueUpdateGridProfiles(bool state)
     {
         m_updateGridProfiles = state;
@@ -159,20 +180,7 @@ public class EnvironmentSetup_modCCP : Singleton<EnvironmentSetup_modCCP>
             {
                 string keyValueKey = keyValueKeys[j];
                 BehaviorProfile value = rangeData[keyValueKey];
-                value = new BehaviorProfile(value.goal, value.group, value.interaction, Random.Range(0.75f, 1f));
-                //value = new BehaviorProfile(0.45f, 0.35f, 0.2f, 0.25f);
-                /*if (value.goal == 1.0 && value.group == 0 && value.interaction == 0
-                    && (value.connection == 0.75f || value.connection == 0.25f))
-                {
-                    if(m_datasetName.Contains("Goal"))
-                        value = new BehaviorProfile(0f, 0.5f, 0.5f, 0f);
-                    else if(m_datasetName.Contains("Group"))
-                        value = new BehaviorProfile(0.5f, 0f, 0.5f, value.connection);
-                    else if(m_datasetName.Contains("Interact"))
-                        value = new BehaviorProfile(0.5f, 0.5f, 0f, value.connection);
-                    else if(m_datasetName.Contains("Connect"))
-                        value = new BehaviorProfile(value.goal, value.group, value.interaction,0f);
-                }*/
+                value = new BehaviorProfile(value.goal, value.group, value.interaction, value.connection);
                 profiles[j] = value;
             }
 
@@ -253,13 +261,6 @@ public class EnvironmentSetup_modCCP : Singleton<EnvironmentSetup_modCCP>
             }
         }
         
-        /*GameObject obj2 = Instantiate(m_interactionPrefab, new Vector3(4,1.5f,-20f), Quaternion.identity, m_interactionParent.transform);
-        obj2.transform.localScale = new Vector3(4, 3, 4.5f);
-        obj2 = Instantiate(m_interactionPrefab, new Vector3(10.6f,1.5f,-12.3f), Quaternion.identity, m_interactionParent.transform);
-        obj2.transform.localScale = new Vector3(4, 3, 4f);
-        obj2 = Instantiate(m_interactionPrefab, new Vector3(18.8f,1.5f,-12.2f), Quaternion.identity, m_interactionParent.transform);
-        obj2.transform.localScale = new Vector3(4, 3, 4f);*/
-        
         if (interactionCounter == 0)
         {
             GameObject interactionObj = Instantiate(m_interactionPrefab, Vector3.zero, Quaternion.identity, m_interactionParent.transform);
@@ -277,30 +278,27 @@ public class EnvironmentSetup_modCCP : Singleton<EnvironmentSetup_modCCP>
     // Start is called before the first frame update
     private void Start()
     {
-        if (m_datasetName.Length == 0)
-            return;
-        
         m_spawnHitColliders = new Collider[10];
         m_agentsParent = transform.Find("Agents");
         m_interactionParent = transform.Find("InteractionObjects");
         m_obstacleParent = transform.Find("ObstacleObjects");
         activeAgents = new List<GameObject>();
         interconnectionData = new Dictionary<int, InterconnectionData>();
-        m_datasetNameText.text = m_datasetName;
+        m_datasetNameText.text = GetDatasetName();
 
         if (saveRoutes)
         {
             String currentPath = Directory.GetCurrentDirectory();
             DirectoryInfo parent = Directory.GetParent(currentPath);
             int randomInt = UnityEngine.Random.Range(0, 1000000);
-            savePath = parent.ToString() + "/MPACT_Model/SaveData" + m_datasetName + "_" + randomInt;
+            savePath = parent.ToString() + "/MPACT_Model/SaveData" + GetDatasetName() + "_" + randomInt;
             Directory.CreateDirectory(savePath);
         }
 
         // Read data from json
         m_dataReader = GetComponent<DataReader>();
-        simulationRootObject = m_dataReader.ReadSimulationJsonFile(m_datasetName);
-        gameObject.name += "_" + m_datasetName;
+        simulationRootObject = m_dataReader.ReadSimulationJsonFile(GetDatasetName());
+        gameObject.name += "_" + GetDatasetName();
         m_frameInterval = simulationRootObject.Environment.frame_interval;
         m_nextEndFame = m_frameInterval;
         m_framerate = simulationRootObject.Environment.framerate;
@@ -313,7 +311,7 @@ public class EnvironmentSetup_modCCP : Singleton<EnvironmentSetup_modCCP>
         RoomManager.Instance.InitializeGrid(m_width, m_height);
 
         // Place scene objects
-        sceneRootObject = m_dataReader.ReadSceneObjectsJsonFile(m_datasetName);
+        sceneRootObject = m_dataReader.ReadSceneObjectsJsonFile(GetDatasetName());
         PlaceSceneObjects(sceneRootObject);
         
         RVO_Manager.Instance.RecreateObstacles(true);
