@@ -15,7 +15,7 @@ Simulating believable crowds for applications like movies or games is challengin
 <br>
 
 <p align="center"><strong>
-	- <a href="https://doi.org/10.1111/cgf.70156" target="_blank">Publication</a> | <a href="https://youtu.be/jTUMp-6b7gg" target="_blank">Video</a> -
+	- <a href="https://doi.org/10.1111/cgf.70156" target="_blank">Publication</a> | <a href="https://github.com/MarilenaLemonari/P2C/blob/main/PDF%20Files/MPACT_Supp.pdf" target="_blank">Supplementary Material (PDF)</a> | <a href="https://youtu.be/jTUMp-6b7gg" target="_blank">Video</a> -
 </strong>
 </p>
 
